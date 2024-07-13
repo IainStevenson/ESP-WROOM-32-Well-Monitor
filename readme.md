@@ -9,15 +9,16 @@ This setup reflects the connections specified in the updated sketch and uses the
 |         |       |         |      |         |
 |   3V3 --+-------+ VCC     |      | VCC     |
 |   GND --+-------+ GND     |      | GND     |
-|  GPIO15-+-------+ Data    |      | Trig    |
-|         |       +---------+      | Echo    |
-|  GPIO13-+------------------------+         |
-|  GPIO14-+------------------------+         |
-|         |                       +---------+
+|  GPIO15-+-------+ Data    |      |         |
+|         |       +---------+      |         |
+|  GPIO13-+------------------------+ Trig    |
+|  GPIO14-+------------------------+ Echo    |
+|         |                        +---------+
+|         |                        
 |         |
 |         |       +---------+      +---------+
-|         |       | LCD 1602|      | Potentiometer
-|         |       |         |      | (10k Ohm)|
+|         |       | LCD 1602|      |Potentiom|
+|         |       |         |      |(10k Ohm)|
 |   GND --+-------+ VSS     |      +---------+
 |    5V --+-------+ VDD     |      |  Pin 1  |  5V
 |         +--+----+ VO      |      |  Pin 2  |
