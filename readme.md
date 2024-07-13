@@ -38,8 +38,25 @@ This setup reflects the connections specified in the updated sketch and uses the
 +---------+       +---------+
 
 For clarity
-Potentiometer (Middle pin (or on its own))	1602 LCD	VO (Contrast Adjust)
-Potentiometer (One side)	GND	-
-Potentiometer (Other side)	5V	-
+Potentiometer 
+Pin 1 (Middle pin (or on its own))	1602 LCD	VO (Contrast Adjust)
+Pin 2 (One side)	+5V
+Pin 3 (Other side)	GND	
+
+Pins
+        1
+        O     < dial
+       2 3
+This way the clockwise is brighter
+Reversing pins 2 and 3 results in reversal of the LCD contrast control to clockwise is dimmer.
+
+Added WIFI, connecting to ssid and using password in the myWiFi.h (you need to add your own).
+And showing IP Address as default banner on LCD once connected.
+
+Notes: 
+
+
+Connected! IP Address: 192.168.0.113 MAC Address: A0:B7:65:63:20:6C
+Connected! IP Address: 192.168.0.116 MAC Address: A0:B7:65:63:20:6C
 
 ```
