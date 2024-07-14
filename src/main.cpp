@@ -6,6 +6,7 @@
 #include <myWiFi.h>
 #include <myNetwork.h>
 #include <myDisplay.h>
+#include <myDevice.h>
 
 void ScrollingText(String(StringToScroll), int(LineToScroll));
 NetWorkAddress connection;
@@ -47,10 +48,11 @@ void loop()
   displayLine(0, TIME_NOW);
   displayLine(1, timeClient.getFormattedTime());
 
-  Serial.println(counter++);
-
   if (counter > 86400) // every 24 hours or so
   {
+    Serial.println(counter++);
+    displayLine(1, "Resetting");
+    delay(2000);
     resetDevice();
   }
 }
