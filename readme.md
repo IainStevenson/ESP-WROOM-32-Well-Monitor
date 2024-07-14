@@ -56,7 +56,6 @@ And showing IP Address as default banner on LCD once connected.
 Notes: 
 
 
-Connected! IP Address: 192.168.0.113 MAC Address: A0:B7:65:63:20:6C
-Connected! IP Address: 192.168.0.116 MAC Address: A0:B7:65:63:20:6C
+
 
 ```

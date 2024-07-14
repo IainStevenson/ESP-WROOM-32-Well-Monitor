@@ -45,15 +45,15 @@ NetWorkAddress connection;
 void setup()
 {
   Serial.begin(115200);
-  InitDisplay();
+  initDisplay();
 
-  DisplayLine(0, "Well Monitor");
-  DisplayLine(1, "Connecting...");
+  displayLine(0, "Well Monitor");
+  displayLine(1, "Connecting...");
 
   connection = initNetwork(preferredSSID, wifiPassword);
 
-  DisplayLine(0, "IPV4 Address");
-  DisplayLine(1, connection.IPAddress);
+  displayLine(0, "IPV4 Address");
+  displayLine(1, connection.IPAddress);
 }
 
 void loop()
