@@ -1,5 +1,7 @@
 
 #include <WiFi.h>
+#include <NTPClient.h>
+#include <time.h>
 #include <Arduino.h>
 #include <myNetwork.h>
 
@@ -41,4 +43,19 @@ NetWorkAddress initNetwork(const char *ssid, const char *password)
         }
     }
     return connection;
+}
+
+void initTimeServer(NTPClient timeClient)
+{
+    Serial.println("Initialising time client");
+
+    timeClient.begin();
+    Serial.print("Getting time from server");
+    while (!timeClient.forceUpdate())
+    {
+        Serial.print("Getting time from server: Now = ");
+        Serial.println(timeClient.getFormattedTime());
+
+        delay(1000);
+    }
 }
