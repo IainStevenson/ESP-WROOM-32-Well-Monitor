@@ -53,12 +53,20 @@ Reversing pins 2 and 3 results in reversal of the LCD contrast control to clockw
 Added WIFI, connecting to ssid and using password in the myWiFi.h (you need to add your own).
 And showing IP Address as default banner on LCD once connected.
 
-Initialising a Network time cserver client and geting the time updated every 10 seconds and displayed as UTC.
+Initialising a Network time server client and geting the time updated every 10 seconds and displayed as UTC.
+
 
 
 Notes: 
 
+Serial output is as follows;
 
+Initialising network
+Connecting to SSID: <ssid>
+..
+Connected! IP Address: 192.168.0.50 MAC Address: xx:xx:xx:xx:xx:xx
+Initialising time client
+Getting time from server
 
 
 ```
