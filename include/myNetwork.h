@@ -12,5 +12,6 @@ NetWorkAddress initNetwork(const char *preferredSSID, const char *wifiPassword);
 /// @brief Initialise the NNTP client and force an update,
 /// @note wait for the time to synch before returning.
 void initTimeServer(NTPClient timeClient);
+void resetDevice();
 
 #endif // myNetwork_h

@@ -15,8 +15,9 @@ NTPClient timeClient(ntpUDP, "pool.ntp.org");
 const char PROGMEM *TIME_NOW = "Time now (UTC):";
 const char PROGMEM *IPV4_ADDRESS = "IPV4 Address";
 const char PROGMEM *TITLE = "Well Monitor";
-const char PROGMEM *CONNECTING = "Connecting...";
-
+const char PROGMEM *CONNECTING = "Connecting......";
+const char PROGMEM *GETTINGTIME = "Getting time....";
+const char PROGMEM *TIMESERVER = "From NNTP as UTC";
 void setup()
 {
   Serial.begin(115200);
@@ -29,17 +30,27 @@ void setup()
 
   displayLine(0, IPV4_ADDRESS);
   displayLine(1, connection.IPAddress);
+  delay(5000);
+
+  displayLine(0, GETTINGTIME);
+  displayLine(1, TIMESERVER);
 
   initTimeServer(timeClient);
 }
-
+int counter = 0;
 void loop()
 {
+  delay(1000);
 
   timeClient.update();
 
   displayLine(0, TIME_NOW);
   displayLine(1, timeClient.getFormattedTime());
 
-  delay(10000);
+  Serial.println(counter++);
+
+  if (counter > 86400) // every 24 hours or so
+  {
+    resetDevice();
+  }
 }

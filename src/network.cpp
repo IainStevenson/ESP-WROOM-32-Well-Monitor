@@ -4,7 +4,7 @@
 #include <time.h>
 #include <Arduino.h>
 #include <myNetwork.h>
-
+class ESPClass;
 NetWorkAddress initNetwork(const char *ssid, const char *password)
 {
     NetWorkAddress connection;
@@ -50,12 +50,17 @@ void initTimeServer(NTPClient timeClient)
     Serial.println("Initialising time client");
 
     timeClient.begin();
-    Serial.print("Getting time from server");
+    Serial.println("Getting time from server");
     while (!timeClient.forceUpdate())
     {
         Serial.print("Getting time from server: Now = ");
         Serial.println(timeClient.getFormattedTime());
+        Serial.println(timeClient.getEpochTime());
 
         delay(1000);
     }
+}
+void resetDevice()
+{
+    ESP.restart();
 }

@@ -68,5 +68,38 @@ Connected! IP Address: 192.168.0.50 MAC Address: xx:xx:xx:xx:xx:xx
 Initialising time client
 Getting time from server
 
-
+HEAP size 331232
+HEAP free 255848
+Count 0
+HEAP size 331232
+HEAP free 255840
+Count 1
+HEAP size 331232
+HEAP free 255840
+Count 2
+HEAP size 331232
+HEAP free 255848
+Count 3
+HEAP size 331232
+HEAP free 255840
+Count 4
+HEAP size 331232
+HEAP free 255840
+Count 5
+HEAP size 331232
+HEAP free 255840
+Count 6
+HEAP size 331232
+HEAP free 255840
+Count 7
+HEAP size 331232
+HEAP free 255840
+Count 8
+HEAP size 331232
+HEAP free 255840
+Count 9
+HEAP size 331232
+HEAP free 255840
+Count 10
+ets Jul 29 2019 12:21:46
 ```
