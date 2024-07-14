@@ -27,7 +27,6 @@
 */
 
 // declare LCD pins
-const int RS = 22, EN = 23, D4 = 5, D5 = 18, D6 = 19, D7 = 21;
 
 // include the library code:
 #include <myNetwork.h>
@@ -35,10 +34,10 @@ const int RS = 22, EN = 23, D4 = 5, D5 = 18, D6 = 19, D7 = 21;
 #include <Arduino.h>
 #include <WiFi.h>
 #include <myWiFi.h>
+#include <myDisplay.h>
 
 // initialize the library by associating any needed LCD interface pin
 // with the arduino pin number it is connected to
-LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
 
 void ScrollingText(String(StringToScroll), int(LineToScroll));
 NetWorkAddress connection;
@@ -46,21 +45,15 @@ NetWorkAddress connection;
 void setup()
 {
   Serial.begin(115200);
-  lcd.begin(16, 2);
-  lcd.clear();
-  lcd.print("How to Interface");
-  lcd.setCursor(0, 1);
-  lcd.print("LCD with ESP32");
+  InitDisplay();
+
+  DisplayLine(0, "Well Monitor");
+  DisplayLine(1, "Connecting...");
 
   connection = initNetwork(preferredSSID, wifiPassword);
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("IP4 Address");
-  lcd.setCursor(0, 1);
-  lcd.print(connection.IPAddress);
 
-  // lcd.setCursor(0, 1);
-  // lcd.print(connection.MACAddress); // too long
+  DisplayLine(0, "IPV4 Address");
+  DisplayLine(1, connection.IPAddress);
 }
 
 void loop()
